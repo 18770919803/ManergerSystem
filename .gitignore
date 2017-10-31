@@ -1,0 +1,4 @@
+*.iml
+logManager\.idea\
+*.jar
+target/
