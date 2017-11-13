@@ -1,0 +1,130 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加页面</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body > div {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .contents {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        .btns{
+            width: 85%;
+            height: 80px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 80px;
+        }
+        .btn{
+            width: 50px;
+            height: 30px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top:10px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+    </style>
+</head>
+
+<body>
+<div style="text-align:center;">
+    <div class='contents'>
+        <label for="keyWord" style='color:#000;padding-left: 10px;'>关键词：
+            <input type="text" name='keyWord' id='keyWord'/>
+        </label>
+    </div>
+    <div class='btns'>
+        <input type="button" value='提交' class='btn btn-success' id='addData'/>&nbsp;&nbsp;
+        <input type="button" value='取消' class='btn btn-danger cancel'/>
+    </div>
+</div>
+<script type="text/javascript" src="/js/libs/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/plugin/layer/layer.js"></script>
+<script type="text/javascript" src="/js/app.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/json2.js"></script>
+<script type="text/javascript">
+  document.onkeydown=function(event){
+    var e=event||window.event;
+  var keyCode=e.keyCode||e.which;
+      if(keyCode==13){
+       keyCode=0;
+     e.returnValue=false;
+  if($('.layui-layer').length>0){
+  }else{
+  
+         $('#addData').click();
+      }
+       return false;
+  }
+};
+    $(".cancel").click(function () {
+        var index = window.parent.layer.getFrameIndex(window.name);
+        window.parent.layer.close(index);
+    });
+    $('#addData').click(function () {
+     if(typeof($('#addData').attr('disabled'))=="undefined"){
+            filterAjax('#addData');
+        var keyword = $('#keyWord').val();
+       if(keyword.length>0){
+        var data = {
+            keyword: keyword
+        };
+        $.ajax({
+            type: 'post',
+            url: '/insertKeyWord',
+            data: data,
+            dateType: "json",
+            success: function (data) {
+             if($('.layui-layer').length<=0){
+            var datas=JSON.parse(data);
+               if(datas.error=='关键字已存在'){
+                 layer.msg("<span style='color:#000'>"+datas.error+"</span>", { icon: 5 ,area: ['220px', '70px']});
+               }else{
+                 layer.msg("<span style='color:#000'>提交成功!</span>", { icon: 1 ,area: ['220px', '70px']});
+                setTimeout(function(){
+                  window.parent.location.reload();
+                },1000);
+               }
+               }
+              
+            },
+            error: function (data) {
+                layer.msg("<span style='color:#000'>提交失败!</span>", { icon: 2 ,area: ['220px', '70px']});
+            }
+        });}
+       }
+       
+               
+           
+    })
+</script>
+</body>
+
+</html>

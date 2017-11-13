@@ -6,13 +6,18 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async": "^2.6.0",
     "body-parser": "~1.18.2",
+    "config": "^1.28.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "^2.5.7",
     "express": "~4.15.5",
     "jade": "~1.11.0",
+    "log4j.js": "^1.0.0",
     "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "node-mysql": "^0.4.2",
     "serve-favicon": "~2.4.5"
   }
 }

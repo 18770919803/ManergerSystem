@@ -1,0 +1,128 @@
+<html lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <title> 日志审计和非法关键字过滤管理系统</title>
+    <meta name="description" content="日志审计和非法关键字过滤管理系统"/>
+    <meta name="author" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+   <meta http-equiv="content-type" content="text/html;charset=utf-8"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-production-plugins.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-production.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/smartadmin-rtl.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/demo.min.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/bootstrap-datetimepicker.min.css"/>
+    <script type="text/javascript" src="/js/libs/html5shiv.min.js"></script>
+   <script type="text/javascript" src="/js/referrer.js"></script>
+    <style>
+        label {
+            margin-bottom: 6px !important;
+        }
+
+        em.invalid {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body class="smart-style-0" >
+<header id="header">
+    <div id="logo-group">
+        <span id="logo"> <img src="/img/logo.gif" alt="日志审计和非法关键字过滤管理系统"/> </span>
+    </div>
+    <div class="pull-right" style='display:none'>
+        <div id="hide-menu" class="btn-header pull-right">
+            <span> <a href="javascript:void(0);" data-action="toggleMenu" title="菜单"><i
+                    class="fa fa-reorder"></i></a> </span>
+        </div>
+        <div id="logout" class="btn-header transparent pull-right">
+            <span> <a href="#" title="注销" data-action="userLogout" data-logout-msg=""><i
+                    class="fa fa-sign-out"></i></a> </span>
+        </div>
+        <div id="fullscreen" class="btn-header transparent pull-right">
+            <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="全屏"><i
+                    class="fa fa-arrows-alt"></i></a> </span>
+        </div>
+        <ul class="header-dropdown-list hidden-xs">
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/img/blank.gif"
+                                                                                 class="flag flag-cn" alt="China"/>
+                    <span>中文</span> <i class="fa fa-angle-down"></i> </a>
+                <ul class="dropdown-menu pull-right">
+                    <li class="active">
+                        <a href="javascript:void(0);"><img src="/img/blank.gif" class="flag flag-cn" alt="China"/> 中文</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+<aside id="left-panel" class="index-aside" >
+    <div class="login-info">
+				<span> 
+					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+						当前用户：
+						<span class="getUsername"></span>
+					</a>
+				</span>
+    </div>
+    <nav id='navMenu'>
+        <ul>
+            <li class="">
+                <a href="ajax/keyword-filter" title="日志管理系统"><i
+                        class="glyphicon glyphicon-eye-open"></i><span>关键词过滤</span></a>
+            </li>
+            <li class="top-menu-invisible">
+                <a href="ajax/audit-log"><i class="glyphicon glyphicon-align-right"></i> <span>审计日志</span></a>
+            </li>
+            <li>
+                <a href="ajax/access-log"><i class="glyphicon glyphicon-heart"></i> <span>访问日志</span></a>
+            </li>
+            <li>
+                <a href="ajax/edit-password"><i class="glyphicon glyphicon-pencil"></i> <span>修改密码</span></a>
+            </li>
+            <li>
+                <div>
+                    <div>
+                        <a href="#" onclick='audiData();'><i class="glyphicon glyphicon-wrench"></i> <span
+                                style=" margin-left: 20px;">退出</span></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <span class="minifyme" data-action="minifyMenu"> <i class="fa fa-arrow-circle-left hit"></i> </span>
+</aside>
+<div id="main" role="main">
+    <div id="ribbon">
+        <ol class="breadcrumb">
+        </ol>
+    </div>
+    <div id="content">
+    </div>
+</div>
+<div class="page-footer">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <span class="txt-color-white">日志管理系统 <span class="hidden-xs"> </span> ©2017</span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/libs/html5shiv.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/app.config.js"></script>
+<script type="text/javascript" src="/js/plugin/jqgrid/ie-jqgrid.js"></script>
+<script type="text/javascript" src="/js/plugin/jqgrid/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="/js/json2.js"></script>
+<script type="text/javascript" src="/js/demo.min.js"></script>
+<script type="text/javascript" src="/js/app.min.js"></script>
+<script type="text/javascript" src="/js/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/smartwidgets/jarvis.widget.min.js"></script>
+<script type="text/javascript" src="/js/plugin/layer/layer.js"></script>
+<script type="text/javascript" src="/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+</body>
+</html>

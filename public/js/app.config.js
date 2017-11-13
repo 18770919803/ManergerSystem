@@ -1,0 +1,16 @@
+﻿$.root_ = $('body');
+$.navAsAjax = true;
+$.sound_on = true;
+var root = this,
+    debugState = false,
+    debugStyle = 'font-weight: bold; color: #00f;',
+    debugStyle_green = 'font-weight: bold; font-style:italic; color: #46C246;',
+    debugStyle_warning = 'background-color:yellow',
+    menu_speed = 235,
+    menu_accordion = true,
+    enableJarvisWidgets = true,
+    localStorageJarvisWidgets = true,
+    sortableJarvisWidgets = true,
+    enableMobileWidgets = false,
+    fastClick = false,
+    ignore_key_elms = ["#header, #left-panel, #right-panel, #main, div.page-footer, #shortcut, #divSmallBoxes, #divMiniIcons, #divbigBoxes, #voiceModal, script, .ui-chatbox"];

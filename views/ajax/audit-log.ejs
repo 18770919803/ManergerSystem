@@ -1,0 +1,55 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<section id="widget-grid" class="">
+    <div class="row">
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="alert alert-info">
+                <form class="form-inline">
+                    <div class="form-group controls input-append date form_date margin-top form-group1">
+                        <label for='startTime'>时间范围: </label>
+                        <input type="text" class="form-control form-controler1" name="startTime" id="startTime" size="16" readonly
+                               data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2"
+                               data-link-format="yyyy-mm-dd"/>
+                       
+                    </div>
+                    <div for="endTime" class="form-group controls input-append date form_date margin-right margin-top form-group1">
+                        <label for='endTime'>-</label>
+                        <input type="text" class="form-control form-controler1" name="endTime" id="endTime" size="16" readonly
+                               data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2"
+                               data-link-format="yyyy-mm-dd"/>
+                       
+                    </div>
+                    <div class="form-group margin-right form-group1">
+                        <label>用户名:</label>
+                        <input type="text" class="form-control form-controler1" name="username" id="username"/>
+                    </div>
+                    <div class="form-group margin-right form-group1">
+                        <label>IP:</label>
+                        <input type="text" class="form-control" name="ip" id="ip"/>
+                    </div>
+                    <div class="form-group margin-right form-group1">
+                        <label>模块:</label>
+                        <select class="form-control " name="module" id="module">
+                        
+                        </select>
+                    </div>
+                    <div class="form-group margin-right form-group1">
+                        <label>结果:</label>
+                        <select class="form-control" name="result" id="result">
+                            <option selected>全部</option>
+                            <option value="失败">失败</option>
+                            <option value="成功">成功</option>
+                            <option value="异常">异常</option>
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <a href="javascript:void(0)" id="searchBtn" class="btn btn-primary" style="margin-top:7px;"><i class="fa fa-search"></i>搜索</a>
+                    </div>
+                </form>
+            </div>
+            <table id="ID_gridTable"></table>
+            <div id="ID_gridPager"></div>
+            <br>
+        </article>
+    </div>
+</section>
