@@ -1,31 +1,34 @@
 ﻿#ID_gridTable table {
     color: #fff;
 }
-input{
+
+input {
     background: #333;
-    color:#fff;
+    color: #fff;
 }
+
 #ID_gridTable tr {
     background-color: #444;
     margin: 0;
     padding: 0;
 }
 
-#ID_gridPager{
+#ID_gridPager {
     background: #444;
     padding: 10px;
 }
 
-#ID_gridTable td,th {
+#ID_gridTable td, th {
     margin: 0;
     padding: 5px 0;
     text-align: center;
-    border:none;
+    border: none;
     border-right: 1px solid #777;
     border-bottom: 1px solid #777;
 
 }
-.header-exp{
+
+.header-exp {
     width: 100%;
     height: 50px;
     background: #444;
@@ -33,29 +36,35 @@ input{
     font-weight: bold;
     font-size: 20px;
 }
-.header-exp span{
+
+.header-exp span {
     margin-left: 50px
 }
-#table-head{
-width:100%;
-    padding:10px 0;
+
+#table-head {
+    width: 100%;
+    padding: 10px 0;
 }
-#table-head>table{
-    width:100%;
+
+#table-head > table {
+    width: 100%;
 }
-#table-head>table tr{
-    width:100%;
+
+#table-head > table tr {
+    width: 100%;
 }
+
 /*#table-head>table tr>th,tr>th{
 
 }*/
-.login-surface{
+.login-surface {
     width: 400px;
     height: 350px;
     background: #1e1e1e;
     margin: 0 auto;
 }
-.login-head{
+
+.login-head {
     color: #fff;
     width: 100%;
     height: 50px;
@@ -66,81 +75,95 @@ width:100%;
     font-size: 20px;
     border-bottom: 1px dashed #555;
 }
-.login-btn{
+
+.login-btn {
     display: block;
     width: 70px;
     height: 40px;
     padding: 5px 17px 5px 17px;
     margin: 0 auto;
 }
-.index-aside
-{
+
+.index-aside {
     background: #444;
 }
-.index-main-header{
+
+.index-main-header {
     height: 100px !important;
 }
-.form-inline{
-	overflow:hidden;
-    _zoom:1;
-}
-.form-group1{
-   float:left!important;
 
-    vertical-align: middle!important;
+.form-inline {
+    overflow: hidden;
+    _zoom: 1;
 }
-.form-group>select{
-    display: inline!important;
-    min-width:50px!important;
-    width:auto!important;
+
+.form-group1 {
+    float: left !important;
+
+    vertical-align: middle !important;
 }
-.grew{
+
+.form-group > select {
+    display: inline !important;
+    min-width: 50px !important;
+    width: auto !important;
+}
+
+.grew {
     background: #333;
 }
-.editPassword{
+
+.editPassword {
     width: 500px;
     background: #555;
     margin: 0 auto;
 }
-.login-rember{
-    left:0!important;
-    margin-left: 7px!important;
-    margin-top: 7px!important;
+
+.login-rember {
+    left: 0 !important;
+    margin-left: 7px !important;
+    margin-top: 7px !important;
 }
-.checkbox>input{
-	display:inline;
+
+.checkbox > input {
+    display: inline;
 }
- .ui-icon {
-	width:17px;
-	heigth:17px;
+
+.ui-icon {
+    width: 17px;
+    heigth: 17px;
     background-image: url(../img/jqueryui/ui-icons_888888_256x240.png);
 }
 
-.smart-form .checkbox I{
-	 display:none; 
+.smart-form .checkbox I {
+    display: none;
 }
 
-.form-groupie7>label{
-	display:inline;
-	
+.form-groupie7 > label {
+    display: inline;
+
 }
-.key-search{
-	width:300px;
+
+.key-search {
+    width: 300px;
 }
-.form-control{
-	display:inline-block!important;
-	width:150px!important;
-    _zoom:1;
-    _display:inline;
+
+.form-control {
+    display: inline-block !important;
+    width: 150px !important;
+    _zoom: 1;
+    _display: inline;
 }
-.margin-top{
-	margin-top:25px;
+
+.margin-top {
+    margin-top: 25px;
 }
-.form-controlie6{
-    display:inline-block!important;
-    width:120px!important;
-    _zoom:1;
-    _display:inline;
+
+.form-controlie6 {
+    display: inline-block !important;
+    width: 120px !important;
+    _zoom: 1;
+    _display: inline;
 }
 
 

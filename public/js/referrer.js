@@ -1,3 +1,3 @@
-(function(){
-    document.referrer==""||document.referrer==null?window.location="/":"";
+(function () {
+    document.referrer == "" || document.referrer == null ? window.location = "/" : "";
 })()

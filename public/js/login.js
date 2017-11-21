@@ -1,35 +1,35 @@
- function checkUser(a, b) {
-        if(isIeEight() == true||isIeSeven()==true||isIeSix()==true){
-            if ($('#' + b).parents('label').next('em.invalid').text() == '' || $('#' + b).parents('label').next('em.invalid').text() == null) {
-                $('#' + b).parents('label').next('em.invalid').remove();
-                $('#' + b).parents('label').after("<em for=" + b + "  class='invalid'style='font-style: normal;font-size: 11px;line-height: 15px;color:#d56161;'>" + a.error + "</em>");
-            } else {
+function checkUser(a, b) {
+    if (isIeEight() == true || isIeSeven() == true || isIeSix() == true) {
+        if ($('#' + b).parents('label').next('em.invalid').text() == '' || $('#' + b).parents('label').next('em.invalid').text() == null) {
+            $('#' + b).parents('label').next('em.invalid').remove();
+            $('#' + b).parents('label').after("<em for=" + b + "  class='invalid'style='font-style: normal;font-size: 11px;line-height: 15px;color:#d56161;'>" + a.error + "</em>");
+        } else {
+            $('#' + b).parents('label').next('em.invalid').text(a.error).css({
+                'font-style': 'normal',
+                'font-size': ' 11px',
+                'line-height': '15px',
+                'color': '#d56161',
+                'display': 'inline'
+            });
+        }
+    } else {
 
-                $('#' + b).parents('label').next('em.invalid').text(a.error).css({
-                    'font-style': 'normal',
-                    'font-size': ' 11px',
-                    'line-height': '15px',
-                    'color': '#d56161',
-                    'display': 'inline'
-                });
-            }
-        }else{
+        if ($('#' + b).parents('.checking').find('em.invalid').text() == '' || $('#' + b).parents('.checking').find('em.invalid').text() == null) {
+            $('#' + b).parents('.checking').find('em.invalid').remove();
+            $('#' + b).parents('.checking').append("<em for=" + b + "  class='invalid'style='font-style: normal;font-size: 11px;line-height: 15px;color:#d56161;'>" + a.error + "</em>")
+        } else {
 
-            if ($('#' + b).parents('.checking').find('em.invalid').text() == '' || $('#' + b).parents('.checking').find('em.invalid').text() == null) {
-                $('#' + b).parents('.checking').find('em.invalid').remove();
-                $('#' + b).parents('.checking').append("<em for=" + b + "  class='invalid'style='font-style: normal;font-size: 11px;line-height: 15px;color:#d56161;'>" + a.error + "</em>")
-            } else {
-
-                $('#' + b).parents('.checking').find('em.invalid').text(a.error).css({
-                    'font-style': 'normal',
-                    'font-size': ' 11px',
-                    'line-height': '15px',
-                    'color': '#d56161',
-                    'display': 'inline'
-                });
-            }
+            $('#' + b).parents('.checking').find('em.invalid').text(a.error).css({
+                'font-style': 'normal',
+                'font-size': ' 11px',
+                'line-height': '15px',
+                'color': '#d56161',
+                'display': 'inline'
+            });
         }
     }
+}
+
 document.onkeyup = function (event) {
     var e = event || window.event;
     var keyCode = e.keyCode || e.which;
@@ -106,7 +106,7 @@ $(function () {
         }
     });
     $('#submit').click(function () {
-        if(typeof($('#submit').attr('disabled'))=="undefined"){
+        if (typeof($('#submit').attr('disabled')) == "undefined") {
             filterAjax('#submit');
             config.username = $('#username').val();
             config.password = $('#password').val();
@@ -115,41 +115,22 @@ $(function () {
                 config.remerber = 1;
             } else {
                 config.remerber = 0;
-                config.password=' ';
+                config.password = ' ';
             }
             var datas = {
                 userName: config.username,
-                userPwd:$('#password').val()
+                userPwd: $('#password').val(),
+                moduleId: config.audiData
             };
             if ($('.invalid').length <= 0 || $('em.invalid').text().length <= 0 || $('em.invalid').css('display') == 'none') {
                 $.ajax({
                     type: 'post',
                     url: '/login',
                     data: datas,
+                    async:false,
                     dateType: "json",
                     success: function (a) {
                         $('#submit').removeAttr("disabled");
-                        var state = '';
-                        var ip = '';
-                        if (a.error) {
-                            state = 0;
-                        } else {
-                            state = 1;
-                        };
-                        var audiData = {
-                            moduleId: config.audiData,
-                            state: state,
-                            userName:config.username,
-                            ip:ip
-                        };
-                        $.ajax({
-                            type: 'post',
-                            url: '/insertAudit',
-                            data: audiData,
-                            dateType: "json",
-                            success: function () {
-                            }
-                        });
                         if (a.error == '用户名不存在') {
                             checkUser(a, 'username');
 
@@ -168,11 +149,16 @@ $(function () {
                         $('#submit').removeAttr("disabled");
                         if ($('.layui-layer').length <= 0) {
 
-                            layer.msg("<span style='color:#000'>服务器连接失败！请稍后！</span>", {icon: 2, time: 2000,area: ['260px', '70px']});
+                            layer.msg("<span style='color:#000'>服务器连接失败！请稍后！</span>", {
+                                icon: 2,
+                                time: 2000,
+                                area: ['260px', '70px']
+                            });
                         }
                     }
 
                 });
-            }}
+            }
+        }
     })
 });

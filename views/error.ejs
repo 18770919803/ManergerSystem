@@ -1,49 +1,69 @@
-
 <html lang="en-us" id="extr-page">
-    <head>
-        <meta charset="utf-8"/>
-        <title> 日志审计和非法关键字过滤管理系统</title>
-        <meta name="description" content="日志审计和非法关键字过滤管理系统"/>
-        <meta name="author" content="日志审计和非法关键字过滤管理系统"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-        <link rel="stylesheet" type="text/css" media="screen" href="/css/error.css"/>
-    </head>
-    <body class="animated fadeInDown">
-    <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
-        <div id="main-content" jstcache="0">
-            <div class="icon icon-offline" jseval="updateIconClass(this.classList, iconClass)" alt="" jstcache="2" ></div>
-            <div id="main-message" jstcache="0">
-                <h1 jsselect="heading" jsvalues=".innerHTML:msg" jstcache="5">未连接到互联网</h1>
-                <p jsselect="summary" jsvalues=".innerHTML:msg" jstcache="2">未连接到互联网</p>
-                <div id="suggestions-list" style="" jsdisplay="(suggestionsSummaryList &amp;&amp; suggestionsSummaryList.length)" jstcache="6">
-                    <p jsvalues=".innerHTML:suggestionsSummaryListHeader" jstcache="13">请试试以下办法：</p>
-                    <ul jsvalues=".className:suggestionsSummaryList.length == 1 ? 'single-suggestion' : ''" jstcache="14" class="">
-                        <li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="15" jsinstance="0">检查网线、调制解调器和路由器</li><li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="15" jsinstance="*1">重新连接到 Wi-Fi 网络</li>
-                    </ul>
-                </div>
-                <div class="error-code" jscontent="errorCode" jstcache="7">ERR_INTERNET_DISCONNECTED</div>
-                <div id="diagnose-frame" class="hidden" jstcache="0"></div>
+<head>
+    <meta charset="utf-8"/>
+    <title> 日志审计和非法关键字过滤管理系统</title>
+    <meta name="description" content="日志审计和非法关键字过滤管理系统"/>
+    <meta name="author" content="日志审计和非法关键字过滤管理系统"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/error.css"/>
+</head>
+<body class="animated fadeInDown">
+<div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
+    <div id="main-content" jstcache="0">
+        <div class="icon icon-offline" jseval="updateIconClass(this.classList, iconClass)" alt="" jstcache="2"></div>
+        <div id="main-message" jstcache="0">
+            <h1 jsselect="heading" jsvalues=".innerHTML:msg" jstcache="5">未连接到互联网</h1>
+            <p jsselect="summary" jsvalues=".innerHTML:msg" jstcache="2">未连接到互联网</p>
+            <div id="suggestions-list" style=""
+                 jsdisplay="(suggestionsSummaryList &amp;&amp; suggestionsSummaryList.length)" jstcache="6">
+                <p jsvalues=".innerHTML:suggestionsSummaryListHeader" jstcache="13">请试试以下办法：</p>
+                <ul jsvalues=".className:suggestionsSummaryList.length == 1 ? 'single-suggestion' : ''" jstcache="14"
+                    class="">
+                    <li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="15" jsinstance="0">
+                        检查网线、调制解调器和路由器
+                    </li>
+                    <li jsselect="suggestionsSummaryList" jsvalues=".innerHTML:summary" jstcache="15" jsinstance="*1">
+                        重新连接到 Wi-Fi 网络
+                    </li>
+                </ul>
             </div>
+            <div class="error-code" jscontent="errorCode" jstcache="7">ERR_INTERNET_DISCONNECTED</div>
+            <div id="diagnose-frame" class="hidden" jstcache="0"></div>
         </div>
-        <div id="buttons" class="nav-wrapper suggested-left" jstcache="0">
-            <div id="control-buttons" hidden="" jstcache="0">
-                <button id="show-saved-copy-button" class="blue-button text-button" onclick="showSavedCopyButtonClick()" jsselect="showSavedCopyButton" jscontent="msg" jsvalues="title:title; .primary:primary" jstcache="9" style="display: none;">
-                </button><button id="reload-button" class="blue-button text-button" onclick="trackClick(this.trackingId);
-                     reloadButtonClick(this.url);" jsselect="reloadButton" jsvalues=".url:reloadUrl; .trackingId:reloadTrackingId" jscontent="msg" jstcache="8" style="display: none;"></button>
+    </div>
+    <div id="buttons" class="nav-wrapper suggested-left" jstcache="0">
+        <div id="control-buttons" hidden="" jstcache="0">
+            <button id="show-saved-copy-button" class="blue-button text-button" onclick="showSavedCopyButtonClick()"
+                    jsselect="showSavedCopyButton" jscontent="msg" jsvalues="title:title; .primary:primary" jstcache="9"
+                    style="display: none;">
+            </button>
+            <button id="reload-button" class="blue-button text-button" onclick="trackClick(this.trackingId);
+                     reloadButtonClick(this.url);" jsselect="reloadButton"
+                    jsvalues=".url:reloadUrl; .trackingId:reloadTrackingId" jscontent="msg" jstcache="8"
+                    style="display: none;"></button>
 
-                <button id="download-button" class="blue-button text-button" onclick="downloadButtonClick()" jsselect="downloadButton" jscontent="msg" jsvalues=".disabledText:disabledMsg" jstcache="10" style="display: none;">
-                </button>
-            </div>
-            <button id="details-button" class="text-button small-link singular" onclick="detailsButtonClick(); toggleHelpBox()" jscontent="details" jsdisplay="(suggestionsDetails &amp;&amp; suggestionsDetails.length > 0) || diagnose" jsvalues=".detailsText:details; .hideDetailsText:hideDetails;" jstcache="3" style="display: none;"></button>
+            <button id="download-button" class="blue-button text-button" onclick="downloadButtonClick()"
+                    jsselect="downloadButton" jscontent="msg" jsvalues=".disabledText:disabledMsg" jstcache="10"
+                    style="display: none;">
+            </button>
         </div>
-        <div id="details" class="hidden" jstcache="0">
-            <div class="suggestions" jsselect="suggestionsDetails" jstcache="4" jsinstance="*0" style="display: none;">
-                <div class="suggestion-header" jsvalues=".innerHTML:header" jstcache="11"></div>
-                <div class="suggestion-body" jsvalues=".innerHTML:body" jstcache="12"></div>
-            </div>
+        <button id="details-button" class="text-button small-link singular"
+                onclick="detailsButtonClick(); toggleHelpBox()" jscontent="details"
+                jsdisplay="(suggestionsDetails &amp;&amp; suggestionsDetails.length > 0) || diagnose"
+                jsvalues=".detailsText:details; .hideDetailsText:hideDetails;" jstcache="3"
+                style="display: none;"></button>
+    </div>
+    <div id="details" class="hidden" jstcache="0">
+        <div class="suggestions" jsselect="suggestionsDetails" jstcache="4" jsinstance="*0" style="display: none;">
+            <div class="suggestion-header" jsvalues=".innerHTML:header" jstcache="11"></div>
+            <div class="suggestion-body" jsvalues=".innerHTML:body" jstcache="12"></div>
         </div>
-        <div class="runner-container"><canvas class="runner-canvas" width="600" height="150" style="width: 600px; height: 150px;"></canvas></div></div>
-    </body>
+    </div>
+    <div class="runner-container">
+        <canvas class="runner-canvas" width="600" height="150" style="width: 600px; height: 150px;"></canvas>
+    </div>
+</div>
+</body>
 </html>
