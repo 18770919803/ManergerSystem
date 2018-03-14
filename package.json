@@ -7,11 +7,14 @@
     "start": "node ./bin/www"
   },
   "plugins": [
-    ["transform-regenerator", {
-      "asyncGenerators": false,
-      "generators": false,
-      "async": false
-    }]
+    [
+      "transform-regenerator",
+      {
+        "asyncGenerators": false,
+        "generators": false,
+        "async": false
+      }
+    ]
   ],
   "dependencies": {
     "async": "^2.6.0",
@@ -21,6 +24,7 @@
     "debug": "~2.6.9",
     "ejs": "^2.5.7",
     "express": "~4.15.5",
+    "express-session": "^1.15.6",
     "jade": "~1.11.0",
     "log4j.js": "^1.0.0",
     "moment": "^2.19.2",
@@ -28,6 +32,7 @@
     "mysql": "^2.15.0",
     "node-mysql": "^0.4.2",
     "serve-favicon": "~2.4.5",
+    "session-file-store": "^1.1.2",
     "silly-datetime": "^0.1.2"
   },
   "devDependencies": {

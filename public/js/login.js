@@ -29,7 +29,13 @@ function checkUser(a, b) {
         }
     }
 }
+var pageRandom = function () {
+    const STR_START_INDEX = 2;
+    const STR_END_INDEX = 12;
+    var str = Math.random().toString();
+    return encodeURIComponent(str.substring(STR_START_INDEX, STR_END_INDEX));
 
+};
 document.onkeyup = function (event) {
     var e = event || window.event;
     var keyCode = e.keyCode || e.which;
@@ -141,8 +147,9 @@ $(function () {
                             checkUser(a, 'password');
 
                         } else {
+                            var nd = pageRandom();
                             config.setCookie('data', config.username + ',' + config.password + ',' + config.remerber, 365);
-                            window.location = 'index#ajax/keyword-filter';
+                            window.location = 'index#ajax/keyword-filter?nd=' + nd;
                         }
                     },
                     error: function () {
